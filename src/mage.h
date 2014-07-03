@@ -4,7 +4,7 @@
 #include "exceptions.h"
 #include <iostream>
 #include <functional>
-#include <jsonrpc/rpc.h>
+#include "rpc.h"
 
 using namespace jsonrpc;
 
