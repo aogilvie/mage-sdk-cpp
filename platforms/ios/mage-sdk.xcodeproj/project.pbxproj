@@ -18,6 +18,17 @@
 			name = "ios-framework-universal";
 			productName = "ios-framework-universal";
 		};
+		412C1F9A1965194500953F68 /* osx-framework-universal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 412C1F9C1965194500953F68 /* Build configuration list for PBXAggregateTarget "osx-framework-universal" */;
+			buildPhases = (
+				412C1F9B1965194500953F68 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "osx-framework-universal";
+			productName = "ios-framework-universal";
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
@@ -147,6 +158,57 @@
 		412C1F6E1965104D00953F68 /* specificationwriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1F0E1965104D00953F68 /* specificationwriter.h */; };
 		412C1F6F1965104D00953F68 /* specificationwriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1F0E1965104D00953F68 /* specificationwriter.h */; };
 		412C1F701965104D00953F68 /* version.h.in in Resources */ = {isa = PBXBuildFile; fileRef = 412C1F0F1965104D00953F68 /* version.h.in */; };
+		412C1F811965192700953F68 /* osx_framework.m in Sources */ = {isa = PBXBuildFile; fileRef = 412C1F801965192700953F68 /* osx_framework.m */; };
+		412C1F9F19651D8A00953F68 /* abstractauthenticator.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1ED91965104D00953F68 /* abstractauthenticator.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FA019651D8D00953F68 /* abstractrequesthandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1EDA1965104D00953F68 /* abstractrequesthandler.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FA119651D9100953F68 /* client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 412C1EDB1965104D00953F68 /* client.cpp */; };
+		412C1FA219651D9300953F68 /* client.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1EDC1965104D00953F68 /* client.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FA319651D9500953F68 /* clientconnector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 412C1EDD1965104D00953F68 /* clientconnector.cpp */; };
+		412C1FA419651D9700953F68 /* clientconnector.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1EDE1965104D00953F68 /* clientconnector.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FA519651D9C00953F68 /* httpclient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 412C1EE11965104D00953F68 /* httpclient.cpp */; };
+		412C1FA619651D9E00953F68 /* httpclient.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1EE21965104D00953F68 /* httpclient.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FA719651DA000953F68 /* httpserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 412C1EE31965104D00953F68 /* httpserver.cpp */; };
+		412C1FA819651DA200953F68 /* httpserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1EE41965104D00953F68 /* httpserver.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FA919651DA400953F68 /* mongoose.c in Sources */ = {isa = PBXBuildFile; fileRef = 412C1EE51965104D00953F68 /* mongoose.c */; };
+		412C1FAA19651DA600953F68 /* mongoose.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1EE61965104D00953F68 /* mongoose.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FAB19651DAD00953F68 /* errors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 412C1EE91965104D00953F68 /* errors.cpp */; };
+		412C1FAC19651DB000953F68 /* errors.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1EEA1965104D00953F68 /* errors.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FAD19651DB200953F68 /* exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 412C1EEB1965104D00953F68 /* exception.cpp */; };
+		412C1FAE19651DB500953F68 /* exception.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1EEC1965104D00953F68 /* exception.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FAF19651DB800953F68 /* autolink.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1EEE1965104D00953F68 /* autolink.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FB019651DBB00953F68 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1EEF1965104D00953F68 /* config.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FB119651DBD00953F68 /* features.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1EF01965104D00953F68 /* features.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FB219651DBF00953F68 /* forwards.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1EF11965104D00953F68 /* forwards.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FB319651DC200953F68 /* json.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1EF21965104D00953F68 /* json.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FB419651DC300953F68 /* json_batchallocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1EF31965104D00953F68 /* json_batchallocator.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FB519651DC600953F68 /* json_reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 412C1EF61965104D00953F68 /* json_reader.cpp */; };
+		412C1FB619651DC800953F68 /* json_value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 412C1EF71965104D00953F68 /* json_value.cpp */; };
+		412C1FB719651DCB00953F68 /* json_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 412C1EF91965104D00953F68 /* json_writer.cpp */; };
+		412C1FB819651DCE00953F68 /* reader.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1EFB1965104D00953F68 /* reader.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FB919651DD100953F68 /* value.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1EFC1965104D00953F68 /* value.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FBA19651DD300953F68 /* writer.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1EFD1965104D00953F68 /* writer.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FBB19651DD600953F68 /* procedure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 412C1EFF1965104D00953F68 /* procedure.cpp */; };
+		412C1FBC19651DD900953F68 /* procedure.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1F001965104D00953F68 /* procedure.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FBD19651DDB00953F68 /* rpc.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1F011965104D00953F68 /* rpc.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FBE19651DDF00953F68 /* rpcprotocolclient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 412C1F021965104D00953F68 /* rpcprotocolclient.cpp */; };
+		412C1FBF19651DE200953F68 /* rpcprotocolclient.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1F031965104D00953F68 /* rpcprotocolclient.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FC019651DE700953F68 /* rpcprotocolserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 412C1F041965104D00953F68 /* rpcprotocolserver.cpp */; };
+		412C1FC119651DE700953F68 /* rpcprotocolserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1F051965104D00953F68 /* rpcprotocolserver.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FC219651DE700953F68 /* server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 412C1F061965104D00953F68 /* server.cpp */; };
+		412C1FC319651DE700953F68 /* server.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1F071965104D00953F68 /* server.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FC419651DE700953F68 /* serverconnector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 412C1F081965104D00953F68 /* serverconnector.cpp */; };
+		412C1FC519651DE700953F68 /* serverconnector.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1F091965104D00953F68 /* serverconnector.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FC619651DE700953F68 /* specification.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1F0A1965104D00953F68 /* specification.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FC719651DE700953F68 /* specificationparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 412C1F0B1965104D00953F68 /* specificationparser.cpp */; };
+		412C1FC819651DE700953F68 /* specificationparser.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1F0C1965104D00953F68 /* specificationparser.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FC919651DE700953F68 /* specificationwriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 412C1F0D1965104D00953F68 /* specificationwriter.cpp */; };
+		412C1FCA19651DE700953F68 /* specificationwriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 412C1F0E1965104D00953F68 /* specificationwriter.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		412C1FCB19651DF100953F68 /* exceptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E2037A8195F1CC8009D14D5 /* exceptions.cpp */; };
+		412C1FCC19651DF400953F68 /* exceptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E2037A9195F1CC8009D14D5 /* exceptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		412C1FCD19651DF600953F68 /* mage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E2037AA195F1CC8009D14D5 /* mage.cpp */; };
+		412C1FCE19651DF800953F68 /* mage.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E2037AB195F1CC8009D14D5 /* mage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		412C1FCF19651DFA00953F68 /* mage_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E203785195F1B96009D14D5 /* mage_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		412C1FD019651DFC00953F68 /* mage_sdk.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E203787195F1B96009D14D5 /* mage_sdk.m */; };
 		6E203781195F1B96009D14D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E203780195F1B96009D14D5 /* Foundation.framework */; };
 		6E203786195F1B96009D14D5 /* mage_sdk.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6E203785195F1B96009D14D5 /* mage_sdk.h */; };
 		6E203788195F1B96009D14D5 /* mage_sdk.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E203787195F1B96009D14D5 /* mage_sdk.m */; };
@@ -285,6 +347,17 @@
 		412C1F0D1965104D00953F68 /* specificationwriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = specificationwriter.cpp; sourceTree = "<group>"; };
 		412C1F0E1965104D00953F68 /* specificationwriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = specificationwriter.h; sourceTree = "<group>"; };
 		412C1F0F1965104D00953F68 /* version.h.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = version.h.in; sourceTree = "<group>"; };
+		412C1F751965192700953F68 /* libMAGE.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libMAGE.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		412C1F761965192700953F68 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		412C1F791965192700953F68 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		412C1F7A1965192700953F68 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		412C1F7B1965192700953F68 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		412C1F7E1965192700953F68 /* osx-framework-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osx-framework-Prefix.pch"; sourceTree = "<group>"; };
+		412C1F7F1965192700953F68 /* osx_framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = osx_framework.h; sourceTree = "<group>"; };
+		412C1F801965192700953F68 /* osx_framework.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = osx_framework.m; sourceTree = "<group>"; };
+		412C1F8E1965192700953F68 /* osx-frameworkTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "osx-frameworkTests-Info.plist"; sourceTree = "<group>"; };
+		412C1F901965192700953F68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		412C1F921965192700953F68 /* osx_frameworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = osx_frameworkTests.m; sourceTree = "<group>"; };
 		6E20377D195F1B96009D14D5 /* libmage-sdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libmage-sdk.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E203780195F1B96009D14D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6E203784195F1B96009D14D5 /* mage-sdk-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mage-sdk-Prefix.pch"; sourceTree = "<group>"; };
@@ -321,6 +394,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		412C03F51963985900953F68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		412C1F721965192700953F68 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -503,6 +583,52 @@
 			path = json;
 			sourceTree = "<group>";
 		};
+		412C1F781965192700953F68 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				412C1F791965192700953F68 /* Foundation.framework */,
+				412C1F7A1965192700953F68 /* CoreData.framework */,
+				412C1F7B1965192700953F68 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		412C1F7C1965192700953F68 /* osx-framework */ = {
+			isa = PBXGroup;
+			children = (
+				412C1F7F1965192700953F68 /* osx_framework.h */,
+				412C1F801965192700953F68 /* osx_framework.m */,
+				412C1F7D1965192700953F68 /* Supporting Files */,
+			);
+			path = "osx-framework";
+			sourceTree = "<group>";
+		};
+		412C1F7D1965192700953F68 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				412C1F7E1965192700953F68 /* osx-framework-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		412C1F8C1965192700953F68 /* osx-frameworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				412C1F921965192700953F68 /* osx_frameworkTests.m */,
+				412C1F8D1965192700953F68 /* Supporting Files */,
+			);
+			path = "osx-frameworkTests";
+			sourceTree = "<group>";
+		};
+		412C1F8D1965192700953F68 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				412C1F8E1965192700953F68 /* osx-frameworkTests-Info.plist */,
+				412C1F8F1965192700953F68 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		6E203774195F1B96009D14D5 = {
 			isa = PBXGroup;
 			children = (
@@ -510,6 +636,8 @@
 				412C03181962698D00953F68 /* mage-app */,
 				412C03511962758A00953F68 /* ios-framework */,
 				412C03FA1963985900953F68 /* ios-framework-simulator */,
+				412C1F7C1965192700953F68 /* osx-framework */,
+				412C1F8C1965192700953F68 /* osx-frameworkTests */,
 				6E20377F195F1B96009D14D5 /* Frameworks */,
 				6E20377E195F1B96009D14D5 /* Products */,
 			);
@@ -522,6 +650,7 @@
 				412C03131962698D00953F68 /* mage-app.app */,
 				412C034F1962758A00953F68 /* libMAGE.a */,
 				412C03F81963985900953F68 /* libMAGE.a */,
+				412C1F751965192700953F68 /* libMAGE.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -537,6 +666,8 @@
 				6E203791195F1B96009D14D5 /* UIKit.framework */,
 				41046F531961575A001E5671 /* CoreFoundation.framework */,
 				412C03151962698D00953F68 /* CoreGraphics.framework */,
+				412C1F761965192700953F68 /* Cocoa.framework */,
+				412C1F781965192700953F68 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -641,6 +772,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		412C1F731965192700953F68 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				412C1FCF19651DFA00953F68 /* mage_sdk.h in Headers */,
+				412C1FCE19651DF800953F68 /* mage.h in Headers */,
+				412C1FCC19651DF400953F68 /* exceptions.h in Headers */,
+				412C1FA219651D9300953F68 /* client.h in Headers */,
+				412C1FCA19651DE700953F68 /* specificationwriter.h in Headers */,
+				412C1FB819651DCE00953F68 /* reader.h in Headers */,
+				412C1FAF19651DB800953F68 /* autolink.h in Headers */,
+				412C1FB319651DC200953F68 /* json.h in Headers */,
+				412C1FA819651DA200953F68 /* httpserver.h in Headers */,
+				412C1FC619651DE700953F68 /* specification.h in Headers */,
+				412C1FAE19651DB500953F68 /* exception.h in Headers */,
+				412C1FB919651DD100953F68 /* value.h in Headers */,
+				412C1FB419651DC300953F68 /* json_batchallocator.h in Headers */,
+				412C1FA419651D9700953F68 /* clientconnector.h in Headers */,
+				412C1FAC19651DB000953F68 /* errors.h in Headers */,
+				412C1F9F19651D8A00953F68 /* abstractauthenticator.h in Headers */,
+				412C1FBA19651DD300953F68 /* writer.h in Headers */,
+				412C1FB119651DBD00953F68 /* features.h in Headers */,
+				412C1FA019651D8D00953F68 /* abstractrequesthandler.h in Headers */,
+				412C1FC819651DE700953F68 /* specificationparser.h in Headers */,
+				412C1FB019651DBB00953F68 /* config.h in Headers */,
+				412C1FC119651DE700953F68 /* rpcprotocolserver.h in Headers */,
+				412C1FBC19651DD900953F68 /* procedure.h in Headers */,
+				412C1FC519651DE700953F68 /* serverconnector.h in Headers */,
+				412C1FBD19651DDB00953F68 /* rpc.h in Headers */,
+				412C1FBF19651DE200953F68 /* rpcprotocolclient.h in Headers */,
+				412C1FC319651DE700953F68 /* server.h in Headers */,
+				412C1FA619651D9E00953F68 /* httpclient.h in Headers */,
+				412C1FB219651DBF00953F68 /* forwards.h in Headers */,
+				412C1FAA19651DA600953F68 /* mongoose.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -699,6 +867,23 @@
 			productReference = 412C03F81963985900953F68 /* libMAGE.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		412C1F741965192700953F68 /* osx-framework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 412C1F981965192700953F68 /* Build configuration list for PBXNativeTarget "osx-framework" */;
+			buildPhases = (
+				412C1F711965192700953F68 /* Sources */,
+				412C1F721965192700953F68 /* Frameworks */,
+				412C1F731965192700953F68 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "osx-framework";
+			productName = "osx-framework";
+			productReference = 412C1F751965192700953F68 /* libMAGE.a */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
 		6E20377C195F1B96009D14D5 /* mage-sdk */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E2037A0195F1B96009D14D5 /* Build configuration list for PBXNativeTarget "mage-sdk" */;
@@ -739,9 +924,11 @@
 			projectRoot = "";
 			targets = (
 				6E20377C195F1B96009D14D5 /* mage-sdk */,
+				412C1F741965192700953F68 /* osx-framework */,
 				412C034E1962758A00953F68 /* ios-framework */,
 				412C03F71963985900953F68 /* ios-framework-simulator */,
 				41047136196258A1001E5671 /* ios-framework-universal */,
+				412C1F9A1965194500953F68 /* osx-framework-universal */,
 				412C03121962698D00953F68 /* mage-app */,
 			);
 		};
@@ -790,6 +977,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "set -e\nset -x\n# Sets the target folders and the final framework product.\nTARGET_NAME=ios-framework\nTARGET_SIM_NAME=ios-framework-simulator\nFMK_NAME=MAGE\nFMK_VERSION=A\n\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\n\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\n\n\n# Building both architectures.\nxcodebuild -configuration \"Release\" -target \"${TARGET_NAME}\" -sdk iphoneos\nxcodebuild -configuration \"Release\" -target \"${TARGET_SIM_NAME}\" -sdk iphonesimulator\n\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\n\n# Creates and renews the final product folder.\nmkdir -p \"${INSTALL_DIR}\"\nmkdir -p \"${INSTALL_DIR}/Versions\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Headers\"\n\nmkdir -p \"${DEVICE_DIR}/${FMK_NAME}\"\nmkdir -p \"${SIMULATOR_DIR}/${FMK_NAME}\"\n\nchmod -R 775 \"${INSTALL_DIR}\"\nchmod -R 775 \"${DEVICE_DIR}\"\nchmod -R 775 \"${SIMULATOR_DIR}\"\n\n# Move from default usr/local/include to .framework/Header\nmkdir -p \"${DEVICE_DIR}/Headers\"\ncp -R \"${WRK_DIR}/Release-iphoneos/usr/local/include/\" \"${DEVICE_DIR}/Headers/\"\n\n# Creates the internal links.\n# It MUST uses relative path, otherwise will not work when the folder is copied/moved.\nln -sfh \"${FMK_VERSION}\" \"${INSTALL_DIR}/Versions/Current\"\nln -sfh \"Versions/Current/Headers\" \"${INSTALL_DIR}/Headers\"\nln -sfh \"Versions/Current/Resources\" \"${INSTALL_DIR}/Resources\"\nln -sfh \"Versions/Current/${FMK_NAME}\" \"${INSTALL_DIR}/${FMK_NAME}\"\n\n# Copies the headers and resources files to the final product folder.\ncp -R \"${DEVICE_DIR}/Headers/\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Headers/\"\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/\"\n\n#chmod 775 \"${WRK_DIR}/Release-iphoneos/lib${FMK_NAME}.a\"\n#chmod 775 \"${INSTALL_DIR}/Versions/${FMK_VERSION}\"\n\nlipo -create \"${WRK_DIR}/Release-iphoneos/lib${FMK_NAME}.a\" \"${WRK_DIR}/Release-iphonesimulator/lib${FMK_NAME}.a\" -output \"${INSTALL_DIR}/Versions/${FMK_VERSION}/${FMK_NAME}\"\n\n";
+		};
+		412C1F9B1965194500953F68 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -x\n# Sets the target folders and the final framework product.\nTARGET_NAME=osx-framework\nFMK_NAME=MAGE\nFMK_VERSION=A\n\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\n\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release/${FMK_NAME}.framework\n\n\n# Building both architectures.\nxcodebuild -configuration \"Release\" -target \"${TARGET_NAME}\" -sdk macosx\n\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\n\n#mv \"${WRK_DIR}/Release/${FMK_NAME}.\" \"${WRK_DIR}/Release/${FMK_NAME}\"\n\n# Creates and renews the final product folder.\nmkdir -p \"${INSTALL_DIR}\"\nmkdir -p \"${INSTALL_DIR}/Versions\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Headers\"\n\nmkdir -p \"${DEVICE_DIR}/${FMK_NAME}\"\n\nchmod -R 775 \"${INSTALL_DIR}\"\nchmod -R 775 \"${DEVICE_DIR}\"\n\n# Move from default usr/local/include to .framework/Header\nmkdir -p \"${DEVICE_DIR}/Headers\"\ncp -R \"${WRK_DIR}/Release/usr/local/include/\" \"${DEVICE_DIR}/Headers/\"\n\n# Creates the internal links.\n# It MUST uses relative path, otherwise will not work when the folder is copied/moved.\nln -sfh \"${FMK_VERSION}\" \"${INSTALL_DIR}/Versions/Current\"\nln -sfh \"Versions/Current/Headers\" \"${INSTALL_DIR}/Headers\"\nln -sfh \"Versions/Current/Resources\" \"${INSTALL_DIR}/Resources\"\nln -sfh \"Versions/Current/${FMK_NAME}\" \"${INSTALL_DIR}/${FMK_NAME}\"\n\n# Copies the headers and resources files to the final product folder.\ncp -R \"${DEVICE_DIR}/Headers/\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Headers/\"\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/\"\n\n#chmod 775 \"${WRK_DIR}/Release-iphoneos/lib${FMK_NAME}.a\"\n#chmod 775 \"${INSTALL_DIR}/Versions/${FMK_VERSION}\"\n\nlipo -create \"${WRK_DIR}/Release/lib${FMK_NAME}.a\" -output \"${INSTALL_DIR}/Versions/${FMK_VERSION}/${FMK_NAME}\"\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -859,6 +1059,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		412C1F711965192700953F68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				412C1FB719651DCB00953F68 /* json_writer.cpp in Sources */,
+				412C1FA319651D9500953F68 /* clientconnector.cpp in Sources */,
+				412C1FB519651DC600953F68 /* json_reader.cpp in Sources */,
+				412C1FCD19651DF600953F68 /* mage.cpp in Sources */,
+				412C1FC219651DE700953F68 /* server.cpp in Sources */,
+				412C1FA119651D9100953F68 /* client.cpp in Sources */,
+				412C1FC019651DE700953F68 /* rpcprotocolserver.cpp in Sources */,
+				412C1FC419651DE700953F68 /* serverconnector.cpp in Sources */,
+				412C1FBE19651DDF00953F68 /* rpcprotocolclient.cpp in Sources */,
+				412C1FCB19651DF100953F68 /* exceptions.cpp in Sources */,
+				412C1FA519651D9C00953F68 /* httpclient.cpp in Sources */,
+				412C1F811965192700953F68 /* osx_framework.m in Sources */,
+				412C1FAB19651DAD00953F68 /* errors.cpp in Sources */,
+				412C1FAD19651DB200953F68 /* exception.cpp in Sources */,
+				412C1FB619651DC800953F68 /* json_value.cpp in Sources */,
+				412C1FA919651DA400953F68 /* mongoose.c in Sources */,
+				412C1FC719651DE700953F68 /* specificationparser.cpp in Sources */,
+				412C1FA719651DA000953F68 /* httpserver.cpp in Sources */,
+				412C1FC919651DE700953F68 /* specificationwriter.cpp in Sources */,
+				412C1FBB19651DD600953F68 /* procedure.cpp in Sources */,
+				412C1FD019651DFC00953F68 /* mage_sdk.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6E203779195F1B96009D14D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -902,6 +1130,14 @@
 				412C03281962698D00953F68 /* Base */,
 			);
 			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		412C1F8F1965192700953F68 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				412C1F901965192700953F68 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1059,6 +1295,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)-iphonesimulator";
 				DEAD_CODE_STRIPPING = NO;
 				DSTROOT = /tmp/ios_framework_simulator.dst;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1093,6 +1330,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)-iphonesimulator";
 				DEAD_CODE_STRIPPING = NO;
 				DSTROOT = /tmp/ios_framework_simulator.dst;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = (
@@ -1112,6 +1350,102 @@
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = i386;
 				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		412C1F941965192700953F68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_EXTENSION = a;
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../externals/curl/ios/curl/include,
+				);
+				LD_DYLIB_INSTALL_NAME = "";
+				LIBRARY_SEARCH_PATHS = ../externals/curl/ios/curl;
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = mh_object;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = MAGE;
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		412C1F951965192700953F68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_EXTENSION = a;
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../externals/curl/ios/curl/include,
+				);
+				LD_DYLIB_INSTALL_NAME = "";
+				LIBRARY_SEARCH_PATHS = ../externals/curl/ios/curl;
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = mh_object;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = MAGE;
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		412C1F9D1965194500953F68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				PRODUCT_NAME = "ios-framework-universal copy";
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+			};
+			name = Debug;
+		};
+		412C1F9E1965194500953F68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				PRODUCT_NAME = "ios-framework-universal copy";
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
 			};
 			name = Release;
 		};
@@ -1275,6 +1609,23 @@
 			buildConfigurations = (
 				412C04151963985900953F68 /* Debug */,
 				412C04161963985900953F68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		412C1F981965192700953F68 /* Build configuration list for PBXNativeTarget "osx-framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				412C1F941965192700953F68 /* Debug */,
+				412C1F951965192700953F68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		412C1F9C1965194500953F68 /* Build configuration list for PBXAggregateTarget "osx-framework-universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				412C1F9D1965194500953F68 /* Debug */,
+				412C1F9E1965194500953F68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

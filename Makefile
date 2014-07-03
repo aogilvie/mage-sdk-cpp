@@ -59,6 +59,12 @@ examples: lib $(EXAMPLES_BIN)
 examples/%: $(EXAMPLES_SRCS)
 	$(CC) $(CFLAGS) $(INCLUDES) $(LFLAGS) $(LIBS) $< -o $@
 
+ios: 
+	xcodebuild -project platforms/ios/mage-sdk.xcodeproj -scheme ios-framework-universal -configuration Release
+
+osx: 
+	xcodebuild -project platforms/ios/mage-sdk.xcodeproj -scheme osx-framework-universal -configuration Release
+
 clean: clean-bin clean-build clean-vendor
 
 clean-vendor:

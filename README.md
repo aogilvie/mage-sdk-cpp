@@ -78,12 +78,40 @@ This will build the example programs under ./examples. Feel
 free to use them to experiment a bit with the API (you will need
 to change the application name and ports).
 
+
+Compile
+-------
+
+### OS X
+
+`make osx`
+
+Output is in `platforms/ios/Products`
+
+### iOS
+
+`make ios`
+
+Output is in `platforms/ios/Products`
+
 Integration
 -----------
 
-### With Cocos2dx
+### With Xcode projects
 
-Coming soon
+1. Add Frameworks
+
+	- add curl folder (`platforms/externals/curl/ios/curl`) (drag & drop into project) 
+	- add MAGE.framework (drag & drop into project)
+
+2. In your project Xcode Build Settings -> Link Binary With Libraries
+
+	- add libz.dylib
+	- add Security.framework
+
+3. Add `#import <MAGE/MAGE.h>` to your project file
+
+Start coding!
 
 ### With Unity/Unreal/Cry/etc.
 
