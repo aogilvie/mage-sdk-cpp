@@ -11,7 +11,7 @@ ifeq ($(UNAME_S),Darwin)
 endif
 
 CC = g++
-CFLAGS  = -g -Wall -std=c++0x
+CFLAGS  = -g -Wall -std=c++0x -DHTTP_CONNECTOR
 
 INCLUDES = -I ./src -I ./vendor/libjson-rpc-cpp/src
 
@@ -29,7 +29,31 @@ EXAMPLES_BIN = $(EXAMPLES_SRCS:.cpp=)
 
 all: bin
 
+#
+# If you want a library to build
+# on iOS, Android, etc...
+#
+platforms: ios android
 
+clean-ios:
+	rm -rf platforms/ios/build/Release-iphoneos
+
+clean-android:
+	rm -rf ./platforms/android/obj
+
+ios: platforms/ios/build/Release-iphoneos/libmage-sdk.a
+
+platforms/ios/build/Release-iphoneos/libmage-sdk.a:
+	xcodebuild ONLY_ACTIVE_ARCH=NO \
+		-project "./platforms/ios/mage-sdk.xcodeproj" \
+		-configuration "Release"
+
+android:
+	cd platforms/android && $(MAKE)
+
+#
+# Build libraries for OS X, Linux
+#
 lib: vendors dirs build/libmage.a
 
 vendors:
@@ -54,10 +78,13 @@ bin: lib $(BIN)
 bin/%: $(BIN_SRCS)
 	$(CC) $(CFLAGS) $(INCLUDES) $(LFLAGS) $(LIBS) $< -o $@
 
-examples: lib $(EXAMPLES_BIN)
+examples: clean-examples lib $(EXAMPLES_BIN)
 
-examples/%: $(EXAMPLES_SRCS)
-	$(CC) $(CFLAGS) $(INCLUDES) $(LFLAGS) $(LIBS) $< -o $@
+clean-examples:
+	find ./examples -depth 1 -not -iname "*.cpp" -exec rm -rf {} \; || true
+
+examples/%:
+	$(CC) $(CFLAGS) $(INCLUDES) $(LFLAGS) $(LIBS) $@.cpp -o $@
 
 ios: 
 	xcodebuild -project platforms/ios/mage-sdk.xcodeproj -scheme ios-framework-universal -configuration Release
@@ -76,3 +103,10 @@ clean-bin:
 
 clean-build:
 	rm -rf $(BUILD_DIRECTORY)
+
+lint:
+	python tools/cpplint.py \
+	--filter=-whitespace/tab,-legal,-build,-readability/streams,-runtime/explicit,-whitespace/indent \
+	--linelength=120 \
+	src/*.{h,cpp} src/bin/*.cpp examples/*.cpp
+

@@ -5,38 +5,43 @@
 #include <iostream>
 #include <functional>
 #include "rpc.h"
+#include <future>
 
-using namespace jsonrpc;
+namespace mage {
 
-namespace mage
-{
-	class RPC
-	{
+	class RPC {
 		public:
-			RPC(std::string mageApplication);
-			RPC(std::string mageApplication, std::string mageDomain);
-			RPC(std::string mageApplication, std::string mageDomain, std::string mageProtocol);
+			RPC(const std::string& mageApplication,
+			    const std::string& mageDomain = "localhost:8080",
+			    const std::string& mageProtocol = "http");
+			~RPC();
 
-			virtual Json::Value Call(const std::string &name, const Json::Value &params);
-			virtual void RegisterCallback(const std::string &eventName, std::function<void(Json::Value)> callback);
+			virtual Json::Value Call(const std::string& name,
+			                         const Json::Value& params) const;
+			virtual std::future<Json::Value> Call(const std::string& name,
+			                                      const Json::Value& params,
+			                                      bool doAsync) const;
+			virtual std::future<void> Call(const std::string& name,
+			                  const Json::Value& params,
+			                  const std::function<void(mage::MageError, Json::Value)>& callback,
+			                  bool doAsync) const;
 
-			void SetProtocol(const std::string mageProtocol);
-			void SetDomain(const std::string mageDomain);
-			void SetApplication(const std::string mageApplication);
+			void SetProtocol(const std::string& mageProtocol);
+			void SetDomain(const std::string& mageDomain);
+			void SetApplication(const std::string& mageApplication);
+			void SetSession(const std::string& sessionKey) const;
+			void ClearSession() const;
+
+			std::string GetUrl() const;
 
 		private:
-			void init();
-			void buildConnector();
+			std::string m_sProtocol;
+			std::string m_sDomain;
+			std::string m_sApplication;
 
-			std::string protocol;
-			std::string domain;
-			std::string application;
-
-			std::string url;
-
-			HttpClient *httpClient;
-			Client *jsonRpcClient;
+			jsonrpc::HttpClient *m_pHttpClient;
+			jsonrpc::Client     *m_pJsonRpcClient;
 	};
 
-} /* namespace mage */
+}  // namespace mage
 #endif /* MAGERPC_H */

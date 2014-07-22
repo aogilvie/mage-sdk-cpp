@@ -43,15 +43,40 @@ sudo apt-get install libcurl4-openssl-dev cmake
 ### Setup
 
 ```bash
-git clone git@github.com:Wizcorp/mage-sdk-cpp.git
+git clone https://github.com/mage/mage-sdk-cpp.git
 cd mage-sdk-cpp
 git submodule update --init
+```
+
+### OS X/Linux
+
+```
 make
+```
+
+### Building for iOS, Android, WP8, etc
+
+**Note**: when building libraries under platforms,
+you should never need to provide your own cURL implementation.
+We are using the one coming from a bootstrapped cocos2d-x project;
+this happens to work very well on all platforms tested so far. Please
+[post an issue](./issues/new) if you encounter any problems.
+
+#### Make all platforms
+
+```
+make platforms
+```
+
+#### Make a specific platform
+
+```
+make [ios|android|wp8]
 ```
 
 ### magecli
 
-After you `make`, you will find an application called
+Thw default make will produce a binary called
 `magecli` under `./bin`. To use:
 
 ```bash
@@ -67,6 +92,21 @@ Usage: magecli -a [application name] -d [domain] [-p [protocol]] [-h]
 Some real-life examples:
 
 ![Screenshot](./img/screenshot.png)
+
+This application can be useful for manually interacting
+with a remote MAGE instance without having to write code
+yourself; great for testing and debugging.
+
+**Note**: In the future, we would love to add some manual
+commands to do the following:
+
+* List available commands
+* Destroy current session (if it is set)
+* Store, manipulate and use JSON blobs in your user commands
+  (instead of having to paste long strings all the time)
+
+Please let us know if any of those feature would be really
+useful/critical to you.
 
 ### Building the example scripts
 
@@ -115,7 +155,7 @@ Start coding!
 
 ### With Unity/Unreal/Cry/etc.
 
-We haven't tried to integrate with these technologies yet. We
+We haven't tried to integrate with these platforms yet. We
 will add some integration notes for each of those projects
 as soon as we have experimented with them.
 
@@ -129,8 +169,29 @@ Todo
 - [ ] Message stream event handling
 - [ ] CLI: Have the option to list and describe the remote calls
 
+Conding Style
+-------------
+
+We try to follow the [Google C++ Style Guide](http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml).
+There are some exceptions:
+* We use default arguments in functions;
+* We use C++ exceptions;
+* We use lambda expressions;
+* We use tabs for indentation and spaces for alignment.
+
+We use the [Hungarian Notation](http://en.wikipedia.org/wiki/Hungarian_notation) to name class attributes.
+More references on Hungarian Notation:
+* [http://web.mst.edu/~cpp/common/hungarian.html](http://web.mst.edu/~cpp/common/hungarian.html)
+* [http://www.cse.iitk.ac.in/users/dsrkg/cs245/html/Guide.htm](http://www.cse.iitk.ac.in/users/dsrkg/cs245/html/Guide.htm)
+
+You can check if you follow the rules by running:
+```bash
+make lint
+```
+
 See also
 ---------
 
 - [JSONCPP, the library we use for our JSON operations](http://jsoncpp.sourceforge.net/)
 - [libjson-rpc-cpp](https://github.com/cinemast/libjson-rpc-cpp)
+

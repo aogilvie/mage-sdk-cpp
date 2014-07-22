@@ -27,3 +27,5 @@ build
 *.dSYM
 examples/*
 !examples/*.cpp
+
+platforms/android/obj

@@ -1,44 +1,30 @@
 #include "mage.h"
 
 using namespace jsonrpc;
-using namespace std;
 
-namespace mage
-{
-	static std::string defaultDomain = "localhost:8080";
-	static std::string defaultProtocol = "http";
+namespace mage {
 
-	RPC::RPC(std::string mageApplication) :
-		protocol(defaultProtocol), domain(defaultDomain), application(mageApplication)
-	{
-		init();
+	RPC::RPC(const std::string& mageApplication,
+	         const std::string& mageDomain,
+	         const std::string& mageProtocol)
+	: m_sProtocol(mageProtocol)
+	, m_sDomain(mageDomain)
+	, m_sApplication(mageApplication) {
+		m_pHttpClient    = new HttpClient(GetUrl());
+		m_pJsonRpcClient = new Client(m_pHttpClient);
 	}
 
-	RPC::RPC(std::string mageApplication, std::string mageDomain) :
-		protocol(defaultProtocol), domain(mageDomain), application(mageApplication)
-	{
-		init();
+	RPC::~RPC() {
+		delete m_pJsonRpcClient;
+		delete m_pHttpClient;
 	}
 
-	RPC::RPC(std::string mageApplication, std::string mageDomain, std::string mageProtocol) :
-		protocol(mageProtocol), domain(mageDomain), application(mageApplication)
-	{
-		init();
-	}
-
-	void RPC::init()
-	{
-		buildConnector();
-		httpClient = new HttpClient(url);
-		jsonRpcClient = new Client(httpClient);
-	}
-
-	Json::Value RPC::Call(const std::string &name, const Json::Value &params)
-	{
+	Json::Value RPC::Call(const std::string& name,
+	                      const Json::Value& params) const {
 		Json::Value res;
 
 		try {
-			jsonRpcClient->CallMethod(name, params, res);
+			m_pJsonRpcClient->CallMethod(name, params, res);
 		} catch (JsonRpcException ex) {
 			throw MageRPCError(ex.GetCode(), ex.GetMessage());
 		}
@@ -52,32 +38,62 @@ namespace mage
 		 *   foreach Event
 		 *     call event callback
 		 */
-		return res["response"];
+		return res;
 	}
 
-	void RPC::RegisterCallback(const std::string &eventName, std::function<void(Json::Value)> callback) {
-		cout << "Registering callback for event:" << eventName << endl;
+	std::future<Json::Value> RPC::Call(const std::string& name,
+	                                   const Json::Value& params,
+	                                   bool doAsync) const {
+		std::launch policy = doAsync ? std::launch::async : std::launch::deferred;
+
+		return std::async(policy, [this, name, params]{
+			return Call(name, params);
+		});
 	}
 
-	void RPC::SetDomain(const std::string mageDomain) {
-		domain = mageDomain;
-		buildConnector();
-		httpClient->SetUrl(url);
+	std::future<void> RPC::Call(const std::string& name,
+	               const Json::Value& params,
+	               const std::function<void(mage::MageError, Json::Value)>& callback,
+	               bool doAsync) const {
+		std::launch policy = doAsync ? std::launch::async : std::launch::deferred;
+
+		return std::async(policy, [this, name, params, callback]{
+			Json::Value res;
+			mage::MageSuccess ok;
+
+			try {
+				res = Call(name, params);
+				callback(ok, res);
+			} catch (mage::MageError e) {
+				callback(e, res);
+			}
+		});
 	}
 
-	void RPC::SetApplication(const std::string mageApplication) {
-		application = mageApplication;
-		buildConnector();
-		httpClient->SetUrl(url);
+	void RPC::SetDomain(const std::string& mageDomain) {
+		m_sDomain = mageDomain;
+		m_pHttpClient->SetUrl(GetUrl());
 	}
 
-	void RPC::SetProtocol(const std::string mageProtocol) {
-		protocol = mageProtocol;
-		buildConnector();
-		httpClient->SetUrl(url);
+	void RPC::SetApplication(const std::string& mageApplication) {
+		m_sApplication = mageApplication;
+		m_pHttpClient->SetUrl(GetUrl());
 	}
 
-	void RPC::buildConnector() {
-		url = protocol + "://" + domain + "/" + application + "/jsonrpc";
+	void RPC::SetProtocol(const std::string& mageProtocol) {
+		m_sProtocol = mageProtocol;
+		m_pHttpClient->SetUrl(GetUrl());
 	}
-}
+
+	void RPC::SetSession(const std::string& sessionKey) const {
+		m_pHttpClient->AddHeader("X-MAGE-SESSION", sessionKey);
+	}
+
+	void RPC::ClearSession() const {
+		m_pHttpClient->RemoveHeader("X-MAGE-SESSION");
+	}
+
+	std::string RPC::GetUrl() const {
+		return m_sProtocol + "://" + m_sDomain + "/" + m_sApplication + "/jsonrpc";
+	}
+}  // namespace mage
